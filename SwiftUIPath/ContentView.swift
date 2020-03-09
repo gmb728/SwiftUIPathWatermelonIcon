@@ -20,6 +20,7 @@ struct ContentView : View {
         Text("西瓜日記")
             .font(.title)
             .offset(x:10, y:80)
+            Group{
             ZStack {
              //西瓜皮
         Path { (path) in
@@ -141,12 +142,13 @@ struct ContentView : View {
                 }
                 .fill(Color(red: 0, green: 0, blue: 0))
             //black
+                }
                 
 }
     }
         .padding(-5)
         
-    
+        
     }
          
 }
