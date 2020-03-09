@@ -10,8 +10,18 @@ import SwiftUI
 
 struct ContentView : View {
     var body: some View {
-        ZStack {
-//西瓜皮
+      
+        ZStack{
+           Circle()
+            .offset(x:4, y:-200)
+            .foregroundColor(Color(.sRGB, red: 255/255, green: 255/255, blue: 0/255, opacity: 1))
+            .opacity(0.8)
+        VStack(alignment: .center, spacing:5){
+        Text("西瓜日記")
+            .font(.title)
+            .offset(x:10, y:80)
+            ZStack {
+             //西瓜皮
         Path { (path) in
             //右１
             path.move(to: CGPoint(x: 20, y: 100))
@@ -131,9 +141,18 @@ struct ContentView : View {
                 }
                 .fill(Color(red: 0, green: 0, blue: 0))
             //black
-    }
+                
 }
-
+    }
+        .padding(-5)
+        
+    
+    }
+         
+}
+    
+}
+ 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
@@ -141,4 +160,3 @@ struct ContentView_Previews : PreviewProvider {
     }
 }
 #endif
-}
