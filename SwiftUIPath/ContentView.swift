@@ -10,16 +10,21 @@ import SwiftUI
 
 struct ContentView : View {
     var body: some View {
-      
-        ZStack{
+    //ＺStack 黃色圓形背景  + 西瓜日記 + 藍色背景 + 西瓜
+    ZStack{
+            Image("blue")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
            Circle()
             .offset(x:4, y:-200)
-            .foregroundColor(Color(.sRGB, red: 255/255, green: 255/255, blue: 0/255, opacity: 1))
-            .opacity(0.8)
+            .foregroundColor(Color(.sRGB, red: 255/255, green: 255/255, blue: 15/255, opacity: 1))
+        
         VStack(alignment: .center, spacing:5){
         Text("西瓜日記")
             .font(.title)
+            .fontWeight(.black)
             .offset(x:10, y:80)
+            
             Group{
             ZStack {
              //西瓜皮
@@ -142,19 +147,52 @@ struct ContentView : View {
                 }
                 .fill(Color(red: 0, green: 0, blue: 0))
             //black
-                }
                 
-}
+                }
+                   
+            }
+       
+           
+            HStack(alignment: .center, spacing:1){
+            Text("痞")
+                .font(.system(.largeTitle))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .offset(x:155, y:175)
+            Text("客")
+                .font(.system(.largeTitle))
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .offset(x:155, y:175)
+                
+           ZStack(alignment: .bottom){
+           Rectangle()
+           .frame(width:42,height:43)
+           .foregroundColor(.white)
+           .cornerRadius(15)
+           .rotationEffect(Angle(degrees: 110))
+                                             
+           Path { (path) in
+               path.move(to: CGPoint(x: 160, y: 200))
+               path.addQuadCurve(to: CGPoint(x: 165, y: 210), control: CGPoint(x: 130, y: 240))
+                       }
+               .fill(Color(red: 255/255, green:255/255, blue:255/255))
+               .offset(x:14, y:175)
+            Text("邦")
+                .font(.system(.largeTitle))
+                .fontWeight(.bold)
+                .foregroundColor(Color(.sRGB, red:1/255, green: 106/255, blue:198/255))
+            }
+
+        }
+        }
     }
-        .padding(-5)
-        
-        
-    }
-         
-}
     
+    .padding(-5)
+       
+    }
 }
- 
+
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
